@@ -1,0 +1,31 @@
+.alert {
+    padding: 15px;
+    border-radius: 4px;
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.alert-info {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.alert-title {
+    font-weight: bold;
+}
