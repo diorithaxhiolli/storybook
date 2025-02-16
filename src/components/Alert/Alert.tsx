@@ -14,7 +14,7 @@ export interface AlertProps {
 const Alert: React.FC<AlertProps> = ({ type, description, title, icon, closeable, variant = 'filled' }) => {
     const [closed, setClosed] = React.useState(false);
 
-    // Close alert when user hits ESC
+    // Close alert when user presses ESC
     const handleEscapeKey = (e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             setClosed(true);
@@ -32,11 +32,10 @@ const Alert: React.FC<AlertProps> = ({ type, description, title, icon, closeable
         ? `alert alert-${type}-filled`
         : `alert alert-outlined alert-${type}-outlined`;
 
-    // Always render, just conditionally show content
     return (
         <div className={alertClass} style={{ display: closed ? 'none' : 'block' }}>
-            {icon && <span className="alert-icon">{icon}</span>}
             <div className="alert-content">
+            {icon && <div className="alert-icon">{icon}</div>}
                 {title && <h4 className="alert-title">{title}</h4>}
                 <p className="alert-description">{description}</p>
             </div>
@@ -50,3 +49,5 @@ const Alert: React.FC<AlertProps> = ({ type, description, title, icon, closeable
 };
 
 export default Alert;
+
+
